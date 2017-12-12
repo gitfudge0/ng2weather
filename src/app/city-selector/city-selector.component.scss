@@ -1,0 +1,31 @@
+.city-container {
+    height: 96vh;
+    border-radius: 8px;
+    background: white;
+    box-shadow: 0 0 16px rgba(0, 0, 0, 0.2);
+    padding: 32px;
+
+    h3 {
+        font-weight: bold;
+    }
+    
+    ul {
+        margin-top: 16px;
+        margin-bottom: 16px;
+        list-style: none;
+        padding: 0;
+        font-size: 20px;
+        border-radius: 8px;
+
+        li {
+            padding: 12px 24px;
+            cursor: pointer;
+
+            &:hover {
+                background: rgba(0, 0, 0, 0.05)
+            }
+        }
+    }
+}
+
+
