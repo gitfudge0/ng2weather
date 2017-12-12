@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { city } from './city';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app';
+
+  selectedCity = {id: 123, name: "New York"}
+  currentCity: city;
+
+  setCity(event) {
+    this.selectedCity = event;
+  }
 }

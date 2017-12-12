@@ -7,7 +7,7 @@
   <div class="row">
     <div class="col-md-12">
       <ul>
-        <li *ngFor="let city of cities">
+        <li *ngFor="let city of cities" (click)="select(city)">
           {{city.name}}
         </li>
       </ul>
