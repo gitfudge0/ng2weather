@@ -4,7 +4,7 @@
       <city-selector (change)="setCity($event)"></city-selector>
     </div>
     <div class="col-md-9 col-lg-9">
-      <weather-details [selectedCity]="selectedCity"></weather-details>
+      <weather-details [selectedCity]="selectedCity" *ngIf="selectedCity"></weather-details>
     </div>
   </div>
 </div>

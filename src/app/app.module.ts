@@ -1,11 +1,13 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 
 import { CitiesService } from './cities.service';
 
 import { AppComponent } from './app.component';
 import { CitySelectorComponent } from './city-selector/city-selector.component';
 import { WeatherDetailsComponent } from './weather-details/weather-details.component';
+import { WeatherService } from './weather.service';
 
 
 @NgModule({
@@ -15,10 +17,12 @@ import { WeatherDetailsComponent } from './weather-details/weather-details.compo
     WeatherDetailsComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpClientModule
   ],
   providers: [
-    CitiesService
+    CitiesService,
+    WeatherService
   ],
   bootstrap: [AppComponent]
 })

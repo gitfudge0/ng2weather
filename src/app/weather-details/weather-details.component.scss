@@ -1,0 +1,37 @@
+#weather-details {
+
+    padding: 48px 0px;
+    
+    #title {
+        font-size: 32px;
+    }
+    
+    #main-content {
+        margin-top: 64px;
+        img {
+            height: 104px;
+            margin: 8px;
+        }
+        span {
+            font-size: 88px;
+            margin: 8px;
+            margin-left: 32px;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin-top: 40px;
+            font-size: 16px;
+
+            li {
+                padding: 4px;
+            }
+        }
+    }
+
+    #desc {
+        margin-top: 16px;
+    }
+
+}

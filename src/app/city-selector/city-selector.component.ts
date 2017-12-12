@@ -1,6 +1,7 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { CitiesService } from '../cities.service';
 import { city } from '../city';
+import { WeatherService } from '../weather.service';
 
 @Component({
   selector: 'city-selector',
@@ -9,17 +10,25 @@ import { city } from '../city';
 })
 export class CitySelectorComponent implements OnInit {
 
-  constructor(public citiesService: CitiesService) { }
+  constructor(
+    public citiesService: CitiesService,
+    private weatherService: WeatherService
+  ) { }
 
   @Output()
   change: EventEmitter<city> = new EventEmitter<city>();
 
   ngOnInit() {
     this.getCities();
+    this.weatherService.getAllWeather()
+      .subscribe(data => {
+        this.cities = data;
+        this.cities = this.cities.list;
+      });
   }
 
-  cities: city[];
-  selectedCity: city;
+  private cities;
+  private selectedCity: city;
 
   /**
    * Get list of base cities
@@ -29,7 +38,7 @@ export class CitySelectorComponent implements OnInit {
       .subscribe(cities => this.cities = cities)
   }
   
-  select(city: city): void {
+  select(city: any): void {
     this.selectedCity = city;
     this.change.emit(this.selectedCity);
   }

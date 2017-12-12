@@ -9,7 +9,7 @@ import { city } from './city';
 export class AppComponent {
   title = 'app';
 
-  selectedCity = {id: 123, name: "New York"}
+  selectedCity;
   currentCity: city;
 
   setCity(event) {

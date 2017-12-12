@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { city } from '../city';
+import { WeatherService } from '../weather.service';
 
 @Component({
   selector: 'weather-details',
@@ -8,12 +9,20 @@ import { city } from '../city';
 })
 export class WeatherDetailsComponent implements OnInit {
   
-  @Input()
-  selectedCity: city = {id: 123, name: "New York"};
-  
-  constructor() { }
+  private location;
+  private time = new Date();
+
+  @Input() set selectedCity(selectedCity: city) {
+    this.location = selectedCity;
+  }
+
+  /**
+   * Constructor for weather details component
+   * @param weatherService Service to fetch weather data
+   */
+  constructor(private weatherService: WeatherService) { }
 
   ngOnInit() {
   }
-
+  
 }
