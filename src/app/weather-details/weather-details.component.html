@@ -10,7 +10,7 @@
 
   <div class="row" id="main-content">
     <div class="col-md-12">
-      <img src="assets/img/{{ location.weather[0].description }}.svg" alt="{{location.weather[0].description}}" class="pull-left">
+      <img src="assets/img/{{ location.weather[0].main }}.svg" alt="{{location.weather[0].description}}" class="pull-left">
       <span class="pull-left"> {{ location.main.temp }}ºC </span>
       <ul class="pull-left">
         <li> Max: {{ location.main.temp_max }}ºC </li>
@@ -21,7 +21,7 @@
 
   <div class="row" id="desc">
     <div class="col-md-12">
-      <h4> <strong>Condition: </strong>{{ location.weather[0].main }} <span style="margin-left: 3em;"><strong>Wind: </strong>{{ location.wind.speed }} ({{location.wind.deg}}º)</span>  </h4>
+      <h4> <strong>Condition: </strong>{{ location.weather[0].description }} <span style="margin-left: 3em;"><strong>Wind: </strong>{{ location.wind.speed }} ({{location.wind.deg}}º)</span>  </h4>
     </div>
   </div>
 </div>

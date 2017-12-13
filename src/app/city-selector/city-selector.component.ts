@@ -27,8 +27,9 @@ export class CitySelectorComponent implements OnInit {
       });
   }
 
-  private cities;
+  private cities: any;
   private selectedCity: city;
+  private sortOrder: string = '+';
 
   /**
    * Get list of base cities
@@ -38,9 +39,20 @@ export class CitySelectorComponent implements OnInit {
       .subscribe(cities => this.cities = cities)
   }
   
+  /**
+   * Select a city and pass to weather component
+   * @param city selected city
+   */
   select(city: any): void {
     this.selectedCity = city;
     this.change.emit(this.selectedCity);
   }
+
+  /**
+   * Change sorting order of list
+   */
+  switchSortOrder(): void {
+    this.sortOrder == '+' ? this.sortOrder = '-' : this.sortOrder = '+';
+  } 
 
 }

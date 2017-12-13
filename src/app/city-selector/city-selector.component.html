@@ -1,13 +1,13 @@
 <div class="city-container">
   <div class="row">
     <div class="col-md-12">
-      <h3>Select a city</h3>
+      <h3>Select a city <span (click)="switchSortOrder()">↨</span></h3>
     </div>
   </div>
   <div class="row">
     <div class="col-md-12">
       <ul>
-        <li *ngFor="let city of cities" (click)="select(city)">
+        <li *ngFor="let city of cities | orderBy: sortOrder" (click)="select(city)">
           {{city.name}}
         </li>
       </ul>

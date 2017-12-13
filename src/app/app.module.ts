@@ -8,13 +8,15 @@ import { AppComponent } from './app.component';
 import { CitySelectorComponent } from './city-selector/city-selector.component';
 import { WeatherDetailsComponent } from './weather-details/weather-details.component';
 import { WeatherService } from './weather.service';
+import { OrderBy } from './orderBy.pipe';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     CitySelectorComponent,
-    WeatherDetailsComponent
+    WeatherDetailsComponent,
+    OrderBy
   ],
   imports: [
     BrowserModule,
