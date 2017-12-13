@@ -1,0 +1,51 @@
+<div class="container-fluid" id="forecast" *ngIf="forecast">
+  <div class="row" id="nav">
+    <div class="col-md-12">
+      <h4 class="pull-left" (click)="goBack()"><i class="fas fa-arrow-left"></i>back</h4>
+    </div>
+  </div>
+
+  <div class="row" id="header">
+    <div class="col-md-12">
+      <h1> {{ forecast.city.name }} </h1>
+      <strong> 5 day forecast </strong>
+    </div>
+  </div>
+
+  <div class="row text-center" id="cast">
+    <div class="col-md-2 col-lg-2 col-sm-3" *ngFor="let day of forecast.list; let i = index;" style="margin-bottom: 32px;">
+
+      <div class="row" style="font-weight: bold;font-size: 48px;">
+        <div class="col-md-12">
+          <h1> {{ day.main.temp }}ºC </h1>
+        </div>
+      </div>
+
+      <div class="row" style="margin-top: 32px;">
+        <div class="col-md-12">
+          <img src="assets/img/{{day.weather[0].main}}.svg" alt="{{day.weather[0].description}}" style="width: 104px;">
+        </div>
+      </div>
+
+      <div class="row" style="margin-top: 32px;">
+        <div class="col-md-12">
+          {{ day.weather[0].description }}
+        </div>
+      </div>
+
+      <div class="row" style="margin-top: 8px;">
+        <div class="col-md-12">
+          <h5> <strong>Max:</strong> {{ day.main.temp_max }}ºC </h5>
+          <h5> <strong>Min:</strong> {{ day.main.temp_min }}ºC </h5>
+        </div>
+      </div>
+
+      <div class="row" style="margin-top: 8px;">
+        <div class="col-md-12">
+          <h4><strong>{{i + 1}} DAY</strong></h4>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

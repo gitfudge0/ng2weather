@@ -1,0 +1,45 @@
+#forecast {
+    padding: 8px 64px;
+
+    #nav {
+        h4 {
+            cursor: pointer;
+            padding: 8px 12px;
+            border-bottom: 3px solid transparent;
+    
+            &:hover {
+                box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+                border-radius: 3px;
+            }
+    
+            i {
+                font-size: 16px;
+                margin-right: 8px;
+            }
+        }
+    }
+
+    #header {
+        h1 {
+            font-weight: bold;
+        }
+    }
+
+    #cast {
+        margin-top: 32px;
+
+        &>div {
+            padding-top: 32px;
+            padding-bottom: 32px;
+            border-radius: 20px;
+            box-shadow: 0 0 16px rgba(0, 0, 0, 0.1);
+            margin-left: 16px; 
+            margin-right: 16px;
+
+            .row:nth-child(3) {
+                text-transform: uppercase;
+                font-weight: bold;
+            }
+        }
+    }
+}

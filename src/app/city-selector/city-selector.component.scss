@@ -4,8 +4,13 @@
     background: white;
     padding: 32px;
 
-    h3 {
+    h1 {
         font-weight: bold;
+
+        i {
+            font-size: 20px;
+            margin-left: 8px;
+        }
     }
     
     ul {
@@ -21,6 +26,9 @@
             cursor: pointer;
 
             &:hover {
+                background: rgba(0, 0, 0, 0.05)
+            }
+            &.selected {
                 background: rgba(0, 0, 0, 0.05)
             }
         }

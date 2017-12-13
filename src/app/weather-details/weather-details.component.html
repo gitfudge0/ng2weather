@@ -24,4 +24,10 @@
       <h4> <strong>Condition: </strong>{{ location.weather[0].description }} <span style="margin-left: 3em;"><strong>Wind: </strong>{{ location.wind.speed }} ({{location.wind.deg}}º)</span>  </h4>
     </div>
   </div>
+
+  <div class="row" style="margin-top: 32px;">
+    <div class="col-md-12">
+      <button routerLink="/forecast/{{location.name}}">View forecast</button>
+    </div>
+  </div>
 </div>

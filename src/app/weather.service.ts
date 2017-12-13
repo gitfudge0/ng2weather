@@ -8,7 +8,8 @@ export class WeatherService {
 
   
   private url_single: string = 'http://api.openweathermap.org/data/2.5/weather?q=';
-  private url_multi: string = 'https://api.openweathermap.org/data/2.5/group?id='
+  private url_multi: string = 'https://api.openweathermap.org/data/2.5/group?id=';
+  private forecast: string = 'http://api.openweathermap.org/data/2.5/forecast?q=';
   private key: string = 'd2f0943d34f3c3e9c586c6460447f9e7';
 
   private locationIdList = new Array();
@@ -37,6 +38,10 @@ export class WeatherService {
    */
   getAllWeather() {
     return this.http.get(this.url_multi + this.locationIdList.join() + '&units=metric&appid=' + this.key);
+  }
+
+  getForecast(location: string) {
+    return this.http.get(this.forecast + location + '&units=metric&appid=' + this.key);
   }
   
 }

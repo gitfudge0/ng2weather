@@ -1,13 +1,14 @@
 <div class="city-container">
   <div class="row">
     <div class="col-md-12">
-      <h3>Select a city <span (click)="switchSortOrder()">↨</span></h3>
+      <h1 *ngIf="!selectedCity">Select a city</h1>
+      <h1 *ngIf="selectedCity">Your cities <i class="fas fa-sort" (click)="switchSortOrder()"></i></h1>
     </div>
   </div>
   <div class="row">
     <div class="col-md-12">
       <ul>
-        <li *ngFor="let city of cities | orderBy: sortOrder" (click)="select(city)">
+        <li *ngFor="let city of cities | orderBy: sortOrder" (click)="select(city)" [class.selected]="selectedCity == city">
           {{city.name}}
         </li>
       </ul>

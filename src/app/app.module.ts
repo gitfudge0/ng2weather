@@ -9,6 +9,9 @@ import { CitySelectorComponent } from './city-selector/city-selector.component';
 import { WeatherDetailsComponent } from './weather-details/weather-details.component';
 import { WeatherService } from './weather.service';
 import { OrderBy } from './orderBy.pipe';
+import { AppRoutingModule } from './/app-routing.module';
+import { ForecastComponent } from './forecast/forecast.component';
+import { ContainerComponent } from './container/container.component';
 
 
 @NgModule({
@@ -16,11 +19,14 @@ import { OrderBy } from './orderBy.pipe';
     AppComponent,
     CitySelectorComponent,
     WeatherDetailsComponent,
-    OrderBy
+    OrderBy,
+    ForecastComponent,
+    ContainerComponent
   ],
   imports: [
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    AppRoutingModule
   ],
   providers: [
     CitiesService,

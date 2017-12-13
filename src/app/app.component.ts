@@ -8,11 +8,4 @@ import { city } from './city';
 })
 export class AppComponent {
   title = 'app';
-
-  selectedCity;
-  currentCity: city;
-
-  setCity(event) {
-    this.selectedCity = event;
-  }
 }
