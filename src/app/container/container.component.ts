@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { city } from '../city';
 
+import { WeatherService } from '../weather.service';
+
 @Component({
   selector: 'app-container',
   templateUrl: './container.component.html',
@@ -8,9 +10,13 @@ import { city } from '../city';
 })
 export class ContainerComponent implements OnInit {
 
-  constructor() { }
+
+  constructor(
+    private weatherService: WeatherService
+  ) { }
 
   ngOnInit() {
+    
   }
 
   selectedCity;
