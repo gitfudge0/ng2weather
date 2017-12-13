@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
-import { over, lensProp, pipe, splitEvery, map, nth } from 'ramda';
+import { over, lensProp, pipe, splitEvery, map, nth, prop } from 'ramda';
 
 import { WeatherService } from '../weather.service';
 
@@ -13,6 +13,23 @@ import { WeatherService } from '../weather.service';
 export class ForecastComponent implements OnInit {
 
   private forecast;
+  type = 'line';
+  data = {
+    labels: ["1 Day", "2 Day", "3 Day", "4 Day", "5 Day"],
+    datasets: [
+      {
+        label: "Temperature",
+        data: [],
+        backgroundColor: [
+          'rgba(54, 162, 235, 0.2)'
+        ],
+      }
+    ]
+  };
+  options = {
+    responsive: true,
+    maintainAspectRatio: false
+  };
 
   constructor(
     private weatherService: WeatherService,
@@ -39,7 +56,14 @@ export class ForecastComponent implements OnInit {
             map(nth(3))
           )
         )(this.forecast)
-        console.log(this.forecast)
+        this.data.datasets[0].data = pipe(
+          prop("list"),
+          splitEvery(8),
+          map(nth(3)),
+          map(prop("main")),
+          map(prop("temp"))
+        )(data)
+        console.log(this.data)
       });
   }
 

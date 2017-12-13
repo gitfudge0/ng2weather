@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
+import { ChartModule } from 'angular2-chartjs';
 
 import { CitiesService } from './cities.service';
 
@@ -26,7 +27,8 @@ import { ContainerComponent } from './container/container.component';
   imports: [
     BrowserModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ChartModule
   ],
   providers: [
     CitiesService,
